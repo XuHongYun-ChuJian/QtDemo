@@ -1,1 +1,1 @@
-# QtMVDDemo
+# QtDemo

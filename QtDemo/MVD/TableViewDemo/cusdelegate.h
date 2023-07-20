@@ -19,4 +19,19 @@ public:
     void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const;
 };
 
+//////////////////////////////////////////////////////////////////////////////////
+///             CusDelegate2 Define
+/////////////////////////////////////////////////////////////////////////////////
+class CusDelegate2: public QStyledItemDelegate
+{
+    Q_OBJECT
+public:
+    CusDelegate2(QObject* parent = nullptr);
+
+    // QAbstractItemDelegate interface
+public:
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    bool editorEvent(QEvent *event, QAbstractItemModel *model, const QStyleOptionViewItem &option, const QModelIndex &index);
+};
+
 #endif // CUSDELEGATE_H

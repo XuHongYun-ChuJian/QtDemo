@@ -19,10 +19,17 @@ Widget::Widget(QWidget *parent)
     //保持Item为编辑状态，不用双击就可以显示代理控件
 //    ui->tableView->openPersistentEditor( model->index(0 , ColumnInfo::Column::ComboBox) );
 //    ui->tableView->openPersistentEditor( model->index(0 , ColumnInfo::Column::SpinBox) );
+//    ui->tableView->openPersistentEditor( model->index(0 , ColumnInfo::Column::ProgressBar) );
 }
 
 Widget::~Widget()
 {
     delete ui;
+}
+
+
+void Widget::on_pushButton_clicked()
+{
+    qDebug()<< ui->tableView->model()->index(0, ColumnInfo::Column::CheckBox).data(Qt::DisplayRole);
 }
 

@@ -46,7 +46,9 @@ QVariant CusTableModel::data(const QModelIndex &index, int role) const
         case ColumnInfo::Column::Button:
             return stData.button_value;
         case ColumnInfo::Column::CheckBox:
+        {
             return stData.checkBox_value;
+        }
         case ColumnInfo::Column::LineEdit:
             return stData.lineEdit_value;
         default:
@@ -151,7 +153,8 @@ Qt::ItemFlags CusTableModel::flags(const QModelIndex &index) const
     if (index.column() == ColumnInfo::Column::LineEdit
         || index.column() == ColumnInfo::Column::SpinBox
         || index.column() == ColumnInfo::Column::ComboBox
-        || index.column() == ColumnInfo::Column::CheckBox)
+        || index.column() == ColumnInfo::Column::CheckBox
+        || index.column() == ColumnInfo::Column::ProgressBar)
     {
         return QAbstractTableModel::flags(index) | Qt::ItemIsEditable;
     }
